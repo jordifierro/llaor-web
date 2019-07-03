@@ -1,10 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { RouteComponentProps } from "react-router";
-
-import { WordApiRepository } from 'words/repositories/WordApiRepository';
 import WordComponent from 'words/components/WordComponent';
-import Word from 'words/entities/Word';
 
 class WordView extends React.Component {
     constructor(props) {

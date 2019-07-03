@@ -1,5 +1,4 @@
 import React from 'react';
-import Word from 'words/entities/Word';
 import 'words/components/WordComponent.css';
 
 const WordComponent = props => {
