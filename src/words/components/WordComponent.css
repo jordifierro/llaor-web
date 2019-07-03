@@ -1,0 +1,43 @@
+.word-container {
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    border: 1px solid gray;
+    border-radius: 25px;
+    font-family: serif;
+    box-sizing: border-box;
+}
+
+.word-name {
+    margin: 10px 0;
+}
+
+.meaning-container {
+    margin: 30px 0;
+}
+
+.meaning-synonyms, .meaning-related {
+    margin: 20px 0;
+}
+
+.meaning-container button {
+    padding: 10px;
+    margin: 5px;
+    border: 0.5px solid gray;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.meaning-type {
+    margin: 5px 0;
+}
+
+.meaning-scientific {
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.meaning-description {
+    margin: 5px 0;
+    font-size: 1.2em;
+}

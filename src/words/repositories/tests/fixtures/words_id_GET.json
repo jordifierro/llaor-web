@@ -1,0 +1,29 @@
+{
+    "word": "paraula",
+    "meanings": [
+        {
+            "scientific": "rhododendron",
+            "type": "m",
+            "description": "meaning",
+            "extra_info": "",
+            "synonym_words": [
+                "mot",
+                "word"
+            ],
+            "related_words": [
+                "significat", "diccionari"
+            ]
+        },
+        {
+            "scientific": "",
+            "type": "",
+            "description": "other meaning",
+            "extra_info": "",
+            "synonym_words": [
+                "tom",
+                "drow"
+            ],
+            "related_words": []
+        }
+    ]
+}

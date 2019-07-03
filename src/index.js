@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import WordView from 'words/views/WordView';
+import { WordApiRepository } from 'words/repositories/WordApiRepository';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const apiHost = process.env['REACT_APP_API_HOST'];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+    <Router>
+        <Route path="/words/:id" render={({match}) => (
+            <WordView wordId={match.params.id}
+                wordApiRepository={new WordApiRepository(apiHost)} /> )}
+        />
+    </Router>
+, document.getElementById('root'));
