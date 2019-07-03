@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import './index.css';
+import './index.scss';
 import WordView from 'words/views/WordView';
 import { WordApiRepository } from 'words/repositories/WordApiRepository';
 

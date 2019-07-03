@@ -1,0 +1,55 @@
+@import "../../index.scss";
+
+.word-container {
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 601px) {
+    .word-container {
+        border: 1px solid $primary-color;
+    }
+}
+
+.word-name {
+    margin: 10px 0;
+}
+
+.meaning-container {
+    margin: 30px 0;
+    padding-left: 20px;
+}
+
+.meaning-description {
+    text-indent: 10px;
+}
+
+.meaning-description::first-letter {
+    text-transform: capitalize;
+}
+
+.meaning-synonyms, .meaning-related {
+    margin: 20px 0;
+}
+
+.meaning-synonyms label, .meaning-related label {
+    font-size: .8rem;
+}
+
+.meaning-type {
+    margin: 5px 0;
+    font-size: .8rem;
+}
+
+.meaning-scientific {
+    margin: 5px 0;
+    font-style: italic;
+    font-size: .8rem;
+}
+
+.meaning-description {
+    margin: 5px 0;
+}

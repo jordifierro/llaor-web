@@ -1,5 +1,5 @@
 import React from 'react';
-import 'words/components/WordComponent.css';
+import 'words/components/WordComponent.scss';
 
 const WordComponent = props => {
     const meaningsHtml = props.word.meanings.map((meaning, index) =>
@@ -7,11 +7,12 @@ const WordComponent = props => {
             <p className="meaning-type">
                 {meaning.type}{meaning.type.length > 0 ? "." : ""}
             </p>
-            <p className="meaning-scientific">{meaning.scientific}</p>
-            <p className="meaning-description">{meaning.description}</p>
+            {meaning.scientific.length > 0 &&
+                <p className="meaning-scientific">({meaning.scientific})</p>}
+            <p className="meaning-description">{meaning.description}.</p>
             {meaning.synonymWords.length > 0 &&
                 <div className="meaning-synonyms">
-                    <label>Sinònims</label>
+                    <label>sinònims</label>
                     <br />
                     {meaning.synonymWords.map((wordId, index) =>
                         <button onClick={() => props.onWordClick(wordId)}
@@ -20,7 +21,7 @@ const WordComponent = props => {
             }
             {meaning.relatedWords.length > 0 &&
                 <div className="meaning-related">
-                    <label>Relacionats</label>
+                    <label>relacionats</label>
                     <br />
                     {meaning.relatedWords.map((wordId, index) =>
                         <button onClick={() => props.onWordClick(wordId)}

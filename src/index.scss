@@ -1,0 +1,39 @@
+$primary-color: #3D2E22;
+$secondary-color: #DCB687;
+$background-color: #FCF7ED;
+
+body {
+  background-color: $background-color;
+  color: $primary-color;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+button, button:hover {
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  padding: 10px;
+  margin: 5px;
+  border: 0.5px solid $primary-color;
+  border-radius: 5px;
+  color: $primary-color;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color .2s ease;
+}
+
+button:hover, button:focus {
+  background-color: darken($background-color, 10%);
+  outline: none;
+}
