@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import WordComponent from 'words/components/WordComponent';
+import LoaderComponent from 'commons/components/loader/LoaderComponent';
 
 class WordView extends React.Component {
     constructor(props) {
@@ -31,7 +32,7 @@ class WordView extends React.Component {
 
     render = () => {
         if (this.state.isFetching) {
-            return <p>Carregant...</p>;
+            return <LoaderComponent />;
         }
         if (this.state.error) {
             return <p>Error!</p>;
