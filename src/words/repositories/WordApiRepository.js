@@ -12,18 +12,26 @@ export class WordApiRepository {
             .then(response => response.json())
             .then(json => parseJsonWord(json));
     };
+
+    getWordsByFirstLetter = letter => {
+        const url = `${this.apiHost}/words?first_letter=${letter}`;
+        return fetch(url)
+            .then(response => response.json())
+            .then(json => parseJsonWords(json));
+    }
 }
 
-const parseJsonWord = wordJson => {
-    return new Word(wordJson.word, parseJsonMeanings(wordJson.meanings));
-};
+const parseJsonWords = wordsJson =>
+    wordsJson.map(wordJson => parseJsonWord(wordJson));
 
-const parseJsonMeanings = meaningsJson => {
-    return meaningsJson.map(meaningJson => {
+const parseJsonWord = wordJson =>
+    new Word(wordJson.word, parseJsonMeanings(wordJson.meanings));
+
+const parseJsonMeanings = meaningsJson =>
+    meaningsJson.map(meaningJson => {
         return new Meaning(meaningJson.scientific,
                            meaningJson.type,
                            meaningJson.description,
                            meaningJson.synonym_words,
                            meaningJson.related_words);
-    })
-}
+    });
