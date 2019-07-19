@@ -3,8 +3,8 @@ import 'commons/components/loader/LoaderComponent.scss';
 
 const LoaderComponent = () => {
     return (
-        <div class="loading">
-            <div class="loader" />
+        <div className="loading">
+            <div className="loader" />
         </div>
     );
 };

@@ -2,6 +2,10 @@ $primary-color: #3D2E22;
 $secondary-color: #DCB687;
 $background-color: #FCF7ED;
 
+* {
+    box-sizing: border-box;
+}
+
 body {
   background-color: $background-color;
   color: $primary-color;
@@ -36,4 +40,26 @@ button, button:hover {
 button:hover, button:focus {
   background-color: darken($background-color, 10%);
   outline: none;
+}
+
+button.active {
+  background-color: $primary-color;
+  font-weight: bold;
+  color: $secondary-color;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+    border-bottom: 1px solid $primary-color;
+}
+
+@media only screen and (min-width: 601px) {
+    li {
+        border: none;
+    }
 }
