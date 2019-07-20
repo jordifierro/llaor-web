@@ -24,7 +24,7 @@ ReactDOM.render(
                     wordApiRepository={new WordApiRepository(apiHost)} /> )}
             />
             <Route path="/diccionari/cerca/:text?" render={({match}) => (
-                <WordsSearchView letter={match.params.text}
+                <WordsSearchView text={match.params.text}
                     wordApiRepository={new WordApiRepository(apiHost)} /> )}
             />
             <Route path="/diccionari/mots/:id" render={({match}) => (

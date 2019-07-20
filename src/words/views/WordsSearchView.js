@@ -20,6 +20,10 @@ class WordsSearchView extends React.Component {
             .catch(reason => this.setState({isFetching: false, error: true}));
     }
 
+    componentDidMount = () => {
+        this.searchWords(this.props.text);
+    }
+
     componentDidUpdate = (prevProps) => {
         if (prevProps.text !== this.props.text) {
             this.searchWords(this.props.text);
@@ -27,16 +31,16 @@ class WordsSearchView extends React.Component {
     }
 
     handleSubmit = (e) => {
-        if(e) e.preventDefault();
+        if (e) e.preventDefault();
         const text = this.input.value;
-        this.searchWords(text);
+        this.props.history.push(`/diccionari/cerca/${text}`);
     }
 
     render = () => {
         const searcherHtml =
             <form onSubmit={this.handleSubmit}>
-                <input classname="search-input" type="text" placeholder="search.."
-                    ref={(element) => { this.input = element }} />
+                <input classname="search-input" type="text" placeholder="cerca.."
+                    defaultValue={this.props.text} ref={(element) => { this.input = element }} />
                 <button type="submit">Cerca</button>
             </form>;
         let wordsHtml = null;
