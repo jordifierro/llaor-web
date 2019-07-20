@@ -13,10 +13,10 @@ const apiHost = process.env['REACT_APP_API_HOST'];
 ReactDOM.render(
     <Router>
         <NavbarComponent />
-        <Route path="/words-by-first-letter" render={({match}) => (
+        <Route path="/diccionari/abc" render={({match}) => (
             <WordsByFirstLetterView wordApiRepository={new WordApiRepository(apiHost)} /> )}
         />
-        <Route path="/words/:id" render={({match}) => (
+        <Route path="/diccionari/mots/:id" render={({match}) => (
             <WordView wordId={match.params.id}
                 wordApiRepository={new WordApiRepository(apiHost)} /> )}
         />
