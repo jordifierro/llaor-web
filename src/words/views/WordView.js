@@ -38,7 +38,7 @@ class WordView extends React.Component {
             return <p>Error!</p>;
         }
         return <WordComponent word={this.state.word}
-                    onWordClick={wordId => this.props.history.push(`/words/${wordId}`)}/>;
+                    onWordClick={wordId => this.props.history.push(`/diccionari/mots/${wordId}`)}/>;
     };
 };
 

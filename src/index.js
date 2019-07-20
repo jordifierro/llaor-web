@@ -8,6 +8,7 @@ import NotfoundComponent from 'commons/components/notfound/NotfoundComponent';
 
 import WordView from 'words/views/WordView';
 import WordsByFirstLetterView from 'words/views/WordsByFirstLetterView';
+import WordsSearchView from 'words/views/WordsSearchView';
 import { WordApiRepository } from 'words/repositories/WordApiRepository';
 
 const apiHost = process.env['REACT_APP_API_HOST'];
@@ -20,6 +21,10 @@ ReactDOM.render(
                 <Redirect to="/diccionari/lletres/a"/>} />
             <Route path="/diccionari/lletres/:id" render={({match}) => (
                 <WordsByFirstLetterView letter={match.params.id}
+                    wordApiRepository={new WordApiRepository(apiHost)} /> )}
+            />
+            <Route path="/diccionari/cerca/:text?" render={({match}) => (
+                <WordsSearchView letter={match.params.text}
                     wordApiRepository={new WordApiRepository(apiHost)} /> )}
             />
             <Route path="/diccionari/mots/:id" render={({match}) => (

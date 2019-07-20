@@ -1,0 +1,47 @@
+[
+    {
+        "word": "paraula",
+        "meanings": [
+            {
+                "scientific": "rhododendron",
+                "type": "m",
+                "description": "first meaning",
+                "extra_info": "",
+                "synonym_words": [
+                    "other",
+                    "one"
+                ],
+                "related_words": [ ]
+            },
+            {
+                "scientific": "ferrugineum",
+                "type": "",
+                "description": "second meaning",
+                "extra_info": "",
+                "synonym_words": [ ],
+                "related_words": [
+                    "two",
+                    "three"
+                ]
+            }
+        ]
+    },
+    {
+        "word": "mot",
+        "meanings": [
+            {
+                "scientific": "",
+                "type": "",
+                "description": "meaning 1",
+                "extra_info": "",
+                "synonym_words": [
+                    "synon",
+                    "nim"
+                ],
+                "related_words": [
+                    "rel"
+                ]
+            }
+        ]
+    }
+]
