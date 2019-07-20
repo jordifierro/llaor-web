@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import "../../_global.scss";
 
 .word-container {
     padding: 1.3rem;
@@ -33,10 +33,6 @@
 
 .meaning-synonyms, .meaning-related {
     margin: 1.3rem 0;
-}
-
-.meaning-synonyms label, .meaning-related label {
-    font-size: .8rem;
 }
 
 .meaning-type {

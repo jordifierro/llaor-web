@@ -1,6 +1,7 @@
-$primary-color: #3D2E22;
-$secondary-color: #DCB687;
-$background-color: #FCF7ED;
+@import '_global.scss';
+@import 'commons/components/loader/LoaderComponent.scss';
+@import 'words/components/WordComponent.scss';
+@import 'words/views/WordsByFirstLetterView.scss';
 
 * {
     box-sizing: border-box;

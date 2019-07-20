@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import WordComponent from 'words/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
-import 'words/views/WordsByFirstLetterView.scss';
 
 const abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'l', 'm',
              'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'x'];

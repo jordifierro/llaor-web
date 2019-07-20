@@ -1,5 +1,4 @@
 import React from 'react';
-import 'commons/components/loader/LoaderComponent.scss';
 
 const LoaderComponent = () => {
     return (

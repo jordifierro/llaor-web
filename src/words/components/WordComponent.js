@@ -1,5 +1,4 @@
 import React from 'react';
-import 'words/components/WordComponent.scss';
 
 const WordComponent = props => {
     const meaningsHtml = props.word.meanings.map((meaning, index) =>
