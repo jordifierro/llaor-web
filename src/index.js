@@ -5,12 +5,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import './index.scss';
 import WordView from 'words/views/WordView';
 import WordsByFirstLetterView from 'words/views/WordsByFirstLetterView';
+import NavbarComponent from 'commons/components/navbar/NavbarComponent';
 import { WordApiRepository } from 'words/repositories/WordApiRepository';
 
 const apiHost = process.env['REACT_APP_API_HOST'];
 
 ReactDOM.render(
     <Router>
+        <NavbarComponent />
         <Route path="/words-by-first-letter" render={({match}) => (
             <WordsByFirstLetterView wordApiRepository={new WordApiRepository(apiHost)} /> )}
         />

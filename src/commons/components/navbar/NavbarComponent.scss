@@ -1,0 +1,13 @@
+@import "../../../_global.scss";
+
+.navbar {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid $primary-color;
+    background-color: lighten($secondary-color, 5%);
+}
+
+.navbar h1 {
+    margin: 0;
+}
