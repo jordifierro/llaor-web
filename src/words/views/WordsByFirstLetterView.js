@@ -12,30 +12,29 @@ class WordsByFirstLetterView extends React.Component {
         this.state = {
             isFetching: true,
             error: false,
-            letter: 'a',
             words: null
         };
     }
 
     getWordsByFirstLetter = letter => {
         this.setState({isFetching: true, error: false});
-        this.props.wordApiRepository.getWordsByFirstLetter(this.state.letter)
+        this.props.wordApiRepository.getWordsByFirstLetter(this.props.letter)
             .then(words => this.setState({isFetching: false, error: false, words: words}))
             .catch(reason => this.setState({isFetching: false, error: true}));
     }
 
     componentDidMount = () => this.getWordsByFirstLetter(this.state.letter);
 
-    componentDidUpdate = (prevProps, prevState) => {
-        if (prevState.letter !== this.state.letter) {
-            this.getWordsByFirstLetter(this.state.letter);
+    componentDidUpdate = (prevProps) => {
+        if (prevProps.letter !== this.props.letter) {
+            this.getWordsByFirstLetter(this.props.letter);
         }
     }
 
     render = () => {
         const letterPickerHtml = abc.map(letter =>
-            <button className={letter === this.state.letter && 'active'}
-                onClick={() => this.setState({letter: letter})}>{letter}</button>);
+            <button className={letter === this.props.letter && 'active'}
+                onClick={() => this.props.history.push(`/diccionari/lletres/${letter}`)}>{letter}</button>);
         let wordsHtml = null;
         if (this.state.isFetching) {
             wordsHtml = <LoaderComponent />;
@@ -48,7 +47,7 @@ class WordsByFirstLetterView extends React.Component {
                 return (
                     <li>
                         <WordComponent word={word}
-                            onWordClick={wordId => this.props.history.push(`/words/${wordId}`)}/>
+                            onWordClick={wordId => this.props.history.push(`/diccionari/mots/${wordId}`)}/>
                     </li>
                 )
             });
