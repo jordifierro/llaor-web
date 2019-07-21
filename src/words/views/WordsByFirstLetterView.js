@@ -34,7 +34,7 @@ class WordsByFirstLetterView extends React.Component {
     render = () => {
         const letterPickerHtml = abc.map(letter =>
             <button className={letter === this.props.letter && 'active'}
-                onClick={() => this.props.history.push(`/diccionari/lletres/${letter}`)}>{letter}</button>);
+                onClick={() => this.props.history.push(`/diccionari/lletra/${letter}`)}>{letter}</button>);
         let wordsHtml = null;
         if (this.state.isFetching) {
             wordsHtml = <LoaderComponent />;
