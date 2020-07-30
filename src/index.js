@@ -17,9 +17,9 @@ ReactDOM.render(
     <Router>
         <NavbarComponent />
         <Switch>
-            <Route exact path="/diccionari/lletra" render={() =>
-                <Redirect to="/diccionari/lletra/a"/>} />
-            <Route path="/diccionari/lletra/:id" render={({match}) => (
+            <Route exact path="/diccionari/lletres" render={() =>
+                <Redirect to="/diccionari/lletres/a"/>} />
+            <Route path="/diccionari/lletres/:id" render={({match}) => (
                 <WordsByFirstLetterView letter={match.params.id}
                     wordApiRepository={new WordApiRepository(apiHost)} /> )}
             />
