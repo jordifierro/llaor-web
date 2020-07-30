@@ -6,10 +6,10 @@ import './index.scss';
 import NavbarComponent from 'commons/components/navbar/NavbarComponent';
 import NotfoundComponent from 'commons/components/notfound/NotfoundComponent';
 
-import WordView from 'words/views/WordView';
-import WordsByFirstLetterView from 'words/views/WordsByFirstLetterView';
-import WordsSearchView from 'words/views/WordsSearchView';
-import { WordApiRepository } from 'words/repositories/WordApiRepository';
+import WordView from 'dictionary/views/WordView';
+import WordsByFirstLetterView from 'dictionary/views/WordsByFirstLetterView';
+import WordsSearchView from 'dictionary/views/WordsSearchView';
+import { WordApiRepository } from 'dictionary/repositories/WordApiRepository';
 
 const apiHost = process.env['REACT_APP_API_HOST'];
 

@@ -1,9 +1,9 @@
-import { WordApiRepository } from 'words/repositories/WordApiRepository';
-import Word from 'words/entities/Word';
-import Meaning from 'words/entities/Meaning';
-import wordIdGet from 'words/repositories/tests/fixtures/words_id_GET.json';
-import wordByFirstLetterGet from 'words/repositories/tests/fixtures/words_first_letter_GET.json';
-import wordsSeachGet from 'words/repositories/tests/fixtures/words_search_GET.json';
+import { WordApiRepository } from 'dictionary/repositories/WordApiRepository';
+import Word from 'dictionary/entities/Word';
+import Meaning from 'dictionary/entities/Meaning';
+import wordIdGet from 'dictionary/repositories/tests/fixtures/words_id_GET.json';
+import wordByFirstLetterGet from 'dictionary/repositories/tests/fixtures/words_first_letter_GET.json';
+import wordsSeachGet from 'dictionary/repositories/tests/fixtures/words_search_GET.json';
 
 test('getWord', async () => {
     window.fetch = jest.fn().mockImplementationOnce(() => {

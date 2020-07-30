@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import WordComponent from 'words/components/WordComponent';
+import WordComponent from 'dictionary/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
 
 class WordView extends React.Component {

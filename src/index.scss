@@ -2,9 +2,9 @@
 @import 'commons/components/loader/LoaderComponent.scss';
 @import 'commons/components/navbar/NavbarComponent.scss';
 @import 'commons/components/notfound/NotfoundComponent.scss';
-@import 'words/components/WordComponent.scss';
-@import 'words/views/WordsByFirstLetterView.scss';
-@import 'words/views/WordsSearchView.scss';
+@import 'dictionary/components/WordComponent.scss';
+@import 'dictionary/views/WordsByFirstLetterView.scss';
+@import 'dictionary/views/WordsSearchView.scss';
 
 * {
   box-sizing: border-box;

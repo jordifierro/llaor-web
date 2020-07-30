@@ -1,5 +1,5 @@
-import Word from 'words/entities/Word';
-import Meaning from 'words/entities/Meaning';
+import Word from 'dictionary/entities/Word';
+import Meaning from 'dictionary/entities/Meaning';
 
 export class WordApiRepository {
     constructor(apiHost) {

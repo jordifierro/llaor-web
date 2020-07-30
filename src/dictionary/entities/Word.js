@@ -1,5 +1,5 @@
 import assert from 'commons/assert';
-import Meaning from 'words/entities/Meaning';
+import Meaning from 'dictionary/entities/Meaning';
 
 class Word {
     constructor(id, meanings) {
