@@ -13,11 +13,12 @@ improving their discoverability.
 
 ## Documentation
 
-This site has two menu pages: `/` is the welcome page with a button to `/diccionari`,
-a section that leads to `/diccionari/cerca` (search page) and `/diccionari/lletres` (abc list).
-`/diccionari/cerca/<text>` is also a valid url to search for <text>.
-`/diccionari/lletres/o` will show the user all the words beggining with 'o'.
-`/diccionari/mots/<example>` prints the definitions of the word 'example'.
+This site has a tree structure with sections: `/` is the welcome page with a button to `/llengua`,
+a section that leads to `/llengua/diccionari` which contains:
+`/llengua/diccionari/cerca` (search page) and `/llengua/diccionari/lletres` (abc list).
+`/llengua/diccionari/cerca/<text>` is also a valid url to search for <text>.
+`/llengua/diccionari/lletres/o` will show the user all the words beggining with 'o'.
+`/llengua/diccionari/mots/<example>` prints the definitions of the word 'example'.
 
 Technically, this web project is very easy. It uses plain react,
 fetching the data from the [llaor-api](https://github.com/jordifierro/llaor-api).

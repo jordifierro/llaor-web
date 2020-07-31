@@ -7,6 +7,7 @@ import NavbarComponent from 'commons/components/navbar/NavbarComponent';
 import NotfoundComponent from 'commons/components/notfound/NotfoundComponent';
 
 import WelcomeView from 'welcome';
+import LanguageView from 'language';
 import DictionaryView from 'dictionary/views/DictionaryView';
 import WordView from 'dictionary/views/WordView';
 import WordsByFirstLetterView from 'dictionary/views/WordsByFirstLetterView';
@@ -20,18 +21,19 @@ ReactDOM.render(
         <NavbarComponent />
         <Switch>
             <Route exact path="/" component={WelcomeView} />
-            <Route exact path="/diccionari" component={DictionaryView} />
-            <Route exact path="/diccionari/lletres" render={() =>
-                <Redirect to="/diccionari/lletres/a"/>} />
-            <Route path="/diccionari/lletres/:id" render={({match}) => (
+            <Route exact path="/llengua" component={LanguageView} />
+            <Route exact path="/llengua/diccionari" component={DictionaryView} />
+            <Route exact path="/llengua/diccionari/lletres" render={() =>
+                <Redirect to="/llengua/diccionari/lletres/a"/>} />
+            <Route path="/llengua/diccionari/lletres/:id" render={({match}) => (
                 <WordsByFirstLetterView letter={match.params.id}
                     wordApiRepository={new WordApiRepository(apiHost)} /> )}
             />
-            <Route path="/diccionari/cerca/:text?" render={({match}) => (
+            <Route path="/llengua/diccionari/cerca/:text?" render={({match}) => (
                 <WordsSearchView text={match.params.text}
                     wordApiRepository={new WordApiRepository(apiHost)} /> )}
             />
-            <Route path="/diccionari/mots/:id" render={({match}) => (
+            <Route path="/llengua/diccionari/mots/:id" render={({match}) => (
                 <WordView wordId={match.params.id}
                     wordApiRepository={new WordApiRepository(apiHost)} /> )}
             />

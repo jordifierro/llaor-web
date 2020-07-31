@@ -15,14 +15,14 @@ class WelcomeView extends React.Component {
                         que actualment se troben en perill d'extinció.
                     </p>
                     <p>
-                        Ham empeçat pela creació d'un diccionari de mots originaris de çò nostre.
+                        Ham empeçat pela secció de la llengua, que contí un diccionari de mots originaris de çò nostre.
                         Esperem que sigue la llaor...
                     </p>
                 </div>
                 <div> 
-                    <Link to="/diccionari">
+                    <Link to="/llengua">
                         <button type="button">
-                            Diccionari
+                            Llengua
                         </button>
                     </Link>
                 </div>

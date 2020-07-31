@@ -33,7 +33,7 @@ class WordsSearchView extends React.Component {
     handleSubmit = (e) => {
         if (e) e.preventDefault();
         const text = this.input.value;
-        this.props.history.push(`/diccionari/cerca/${text}`);
+        this.props.history.push(`/llengua/diccionari/cerca/${text}`);
     }
 
     render = () => {
@@ -55,7 +55,7 @@ class WordsSearchView extends React.Component {
                 return (
                     <li>
                         <WordComponent word={word}
-                            onWordClick={wordId => this.props.history.push(`/diccionari/mots/${wordId}`)}/>
+                            onWordClick={wordId => this.props.history.push(`/llengua/diccionari/mots/${wordId}`)}/>
                     </li>
                 )
             });
