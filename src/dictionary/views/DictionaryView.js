@@ -5,7 +5,7 @@ class DictionaryView extends React.Component {
 
     render = () => {
         return (
-            <div className='dictionary-menu'>
+            <div className='content-box'>
                 <div>
                     <p>
                         En aguesta secció podreu trobar una bona recossira de mots en pallarés.

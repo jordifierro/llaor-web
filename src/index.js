@@ -6,6 +6,7 @@ import './index.scss';
 import NavbarComponent from 'commons/components/navbar/NavbarComponent';
 import NotfoundComponent from 'commons/components/notfound/NotfoundComponent';
 
+import WelcomeView from 'welcome';
 import DictionaryView from 'dictionary/views/DictionaryView';
 import WordView from 'dictionary/views/WordView';
 import WordsByFirstLetterView from 'dictionary/views/WordsByFirstLetterView';
@@ -18,6 +19,7 @@ ReactDOM.render(
     <Router>
         <NavbarComponent />
         <Switch>
+            <Route exact path="/" component={WelcomeView} />
             <Route exact path="/diccionari" component={DictionaryView} />
             <Route exact path="/diccionari/lletres" render={() =>
                 <Redirect to="/diccionari/lletres/a"/>} />
