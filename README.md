@@ -27,6 +27,20 @@ Styles are compatible with computer and mobile.
 
 ## Setup
 
+* Get firebase config and put it inside `public/firebase.js`:
+```javascript
+var firebaseConfig = {
+    apiKey: "A",
+    authDomain: "yourweb.firebaseapp.com",
+    ...
+};
+
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+```
+
+_(remember that this file is gitignored, so needs to be created again on the deployment server)_
+
 * Create `.env` file and add:
 ```bash
 NODE_PATH=src
