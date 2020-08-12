@@ -46,6 +46,6 @@ _(remember that this file is gitignored, so needs to be created again on the dep
 NODE_PATH=src
 REACT_APP_API_HOST=llaorapihost.com
 ```
-* Run `docker build -t llaor/web`
+* Run `docker build -t llaor/web .`
 * Then `docker run -t llaor/web bash -c "npm run test"` will run tests
 * And `docker run -p 3000:3000 -t llaor/web` will make web locally available at `localhost:3000`
