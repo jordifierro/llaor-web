@@ -3,8 +3,14 @@
 nav {
     z-index: 1;
 
-    .hidden {
+    .hidden-if-mobile {
         visibility: hidden;
+        display: none;
+    }
+
+    .hidden-if-desktop {
+        visibility: visible;
+        display: block;
     }
 
     .nav-images {
@@ -55,6 +61,73 @@ nav {
             font-size: x-large;
             padding: 10px;
         }
+
+        li.space {
+            visibility: collapse;
+            display: none;
+        }
     }
 }
 
+@media only screen and (min-width: 768px) {
+    nav {
+        .hidden-if-mobile {
+            visibility: visible;
+            display: block;
+        }
+
+        .hidden-if-desktop {
+            visibility: hidden;
+            display: none;
+        }
+
+        .nav-images {
+            position: fixed;
+            top: 35px;
+            padding: 0;
+            right: calc(50% - 50px);
+
+            .logo {
+                img {
+                    width: 70px;
+                    height: auto;
+                }
+            }
+
+            .icon {
+                display: none;
+            }
+        }
+
+
+        .nav-menu {
+            height: 160px;
+            position: static;
+
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            li {
+                text-align: center;
+                border-bottom: none;
+                font-size: medium;
+                padding: 24px;
+                border-top: 5px solid black;
+                border-bottom: 5px solid black;
+            }
+
+            li.space {
+                display: block;
+                visibility: visible;
+                width: 200px;
+                border-top: none;
+                border-bottom: none;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logoHorizontal from 'images/logo_horizontal.png'
+import logoVertical from 'images/logo_vertical.png'
 import iconHamburger from 'images/icon_hamburger.png'
 import iconCross from 'images/icon_cross.png'
 
@@ -12,7 +13,8 @@ const NavbarComponent = () => {
             <div class="nav-images">
                 <div class="logo">
                     <Link to="/" onClick={() => setOpen(false)}>
-                        <img src={logoHorizontal} />
+                        <img src={logoHorizontal} class="hidden-if-desktop"/>
+                        <img src={logoVertical} class="hidden-if-mobile"/>
                     </Link>
                 </div>
                 <div class="icon" onClick={() => setOpen(!open)}>
@@ -20,7 +22,7 @@ const NavbarComponent = () => {
                     { open && <img src={iconCross} /> }
                 </div>
             </div>
-            <div className={`nav-menu ${open ? "" : "hidden"}`}>
+            <div className={`nav-menu ${open ? "" : "hidden-if-mobile"}`}>
                 <ul>
                     <li>
                         <Link to="/projecte" onClick={() => setOpen(false)}>
@@ -32,6 +34,7 @@ const NavbarComponent = () => {
                             Diccionari
                         </Link>
                     </li>
+                    <li class="space"></li>
                     <li>
                         <Link to="/natri" onClick={() => setOpen(false)}>
                             Natri
