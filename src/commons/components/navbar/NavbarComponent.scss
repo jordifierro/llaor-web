@@ -1,13 +1,60 @@
 @import "../../../_global.scss";
 
-.navbar {
-    display: block;
-    text-align: center;
-    padding: 1rem;
-    border-bottom: 1px solid $primary-color;
-    background-color: lighten($secondary-color, 5%);
+nav {
+    z-index: 1;
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    .nav-images {
+        height: 65px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+
+        .logo {
+            display: inline-block;
+
+            img {
+                width: auto;
+                height: 40px;
+            }
+        }
+
+        .icon {
+
+            img {
+                width: 40px;
+                height: auto;
+            }
+        }
+    }
+
+
+    .nav-menu {
+        background-color: $background-color;
+        height: calc(100% - 65px);
+        width: 100%;
+        position: absolute;
+        top: 65px;
+
+        ul {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        li {
+            text-align: center;
+            border-bottom: none;
+            font-size: x-large;
+            padding: 10px;
+        }
+    }
 }
 
-.navbar h1 {
-    margin: 0;
-}
