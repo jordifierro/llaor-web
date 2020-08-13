@@ -7,6 +7,7 @@ import NavbarComponent from 'commons/components/navbar/NavbarComponent';
 
 import ProjectView from 'ProjectView';
 import AboutView from 'AboutView';
+import ContactView from 'ContactView';
 import DictionaryView from 'dictionary/views/DictionaryView';
 import WordView from 'dictionary/views/WordView';
 import WordsByFirstLetterView from 'dictionary/views/WordsByFirstLetterView';
@@ -22,6 +23,7 @@ ReactDOM.render(
             <Route exact path="/" component={DictionaryView} />
             <Route exact path="/projecte" component={ProjectView} />
             <Route exact path="/natri" component={AboutView} />
+            <Route exact path="/contacte" component={ContactView} />
             <Route exact path="/llengua/diccionari" component={DictionaryView} />
             <Route exact path="/llengua/diccionari/lletres" render={() =>
                 <Redirect to="/llengua/diccionari/lletres/a"/>} />
