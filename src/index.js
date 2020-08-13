@@ -6,7 +6,7 @@ import './index.scss';
 import NavbarComponent from 'commons/components/navbar/NavbarComponent';
 import NotfoundComponent from 'commons/components/notfound/NotfoundComponent';
 
-import WelcomeView from 'welcome';
+import ProjectView from 'ProjectView';
 import LanguageView from 'language';
 import DictionaryView from 'dictionary/views/DictionaryView';
 import WordView from 'dictionary/views/WordView';
@@ -20,7 +20,8 @@ ReactDOM.render(
     <Router>
         <NavbarComponent />
         <Switch>
-            <Route exact path="/" component={WelcomeView} />
+            <Route exact path="/" component={DictionaryView} />
+            <Route exact path="/projecte" component={ProjectView} />
             <Route exact path="/llengua" component={LanguageView} />
             <Route exact path="/llengua/diccionari" component={DictionaryView} />
             <Route exact path="/llengua/diccionari/lletres" render={() =>

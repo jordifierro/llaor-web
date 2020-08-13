@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-class WelcomeView extends React.Component {
+class ProjectView extends React.Component {
 
     render = () => {
         return (
@@ -19,16 +18,9 @@ class WelcomeView extends React.Component {
                         Esperem que sigue la llaor...
                     </p>
                 </div>
-                <div> 
-                    <Link to="/llengua">
-                        <button type="button">
-                            Llengua
-                        </button>
-                    </Link>
-                </div>
             </div>
         )
     };
 };
 
-export default WelcomeView;
+export default ProjectView;
