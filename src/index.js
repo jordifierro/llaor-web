@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 
 import './index.scss';
 import NavbarComponent from 'commons/components/navbar/NavbarComponent';
-import NotfoundComponent from 'commons/components/notfound/NotfoundComponent';
 
 import ProjectView from 'ProjectView';
 import DictionaryView from 'dictionary/views/DictionaryView';
@@ -36,7 +35,7 @@ ReactDOM.render(
                 <WordView wordId={match.params.id}
                     wordApiRepository={new WordApiRepository(apiHost)} /> )}
             />
-            <Route component={NotfoundComponent} />
+            <Route><Redirect to="/" /></Route>
         </Switch>
     </Router>
 , document.getElementById('root'));
