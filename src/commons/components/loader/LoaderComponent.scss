@@ -9,8 +9,8 @@
     left: 50%;
     margin-left: -3rem;
     font-size: .7rem;
-    border: .2rem solid darken($background-color, 10%);
-    border-left: .2rem solid $primary-color;
+    border: .2rem solid darken($beige-color, 10%);
+    border-left: .2rem solid $brown-color;
     animation: spin 1.1s infinite linear;
 }
 .loader, .loader:after {
