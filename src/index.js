@@ -14,12 +14,16 @@ import WordView from 'dictionary/views/WordView';
 import WordsByFirstLetterView from 'dictionary/views/WordsByFirstLetterView';
 import WordsSearchView from 'dictionary/views/WordsSearchView';
 import { WordApiRepository } from 'dictionary/repositories/WordApiRepository';
+import backgroundTopMountains from 'images/background_top_mountains.png'
 
 const apiHost = process.env['REACT_APP_API_HOST'];
 
 ReactDOM.render(
     <Router>
         <NavbarComponent />
+        <div class="top-mountains">
+            <img src={backgroundTopMountains} class="top-mountains" />
+        </div>
         <div class="content">
             <Switch>
                 <Route exact path="/" component={DictionaryView} />

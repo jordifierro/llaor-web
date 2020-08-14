@@ -32,6 +32,15 @@ nav {
   height: 65px;
 }
 
+.top-mountains {
+  overflow: hidden;
+  height: 125px;
+
+  img {
+    min-width: 100%;
+  }
+}
+
 footer, content:after {
   height: 188px;
 }
@@ -41,7 +50,7 @@ footer {
 }
 
 .content {
-  min-height: calc(100% - 253px);
+  min-height: calc(100% - 378px);
   width: 100%;
   text-align: center;
   padding: 1.2rem;
@@ -49,11 +58,14 @@ footer {
 
 @media only screen and (min-width: 768px) {
   nav {
-    height: 160px;
+    height: 140px;
   }
 
   .content {
-    min-height: calc(100% - 348px);
+    min-height: calc(100% - 453px);
+  }
+
+  .top-mountains {
   }
 }
 
