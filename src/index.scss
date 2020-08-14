@@ -20,7 +20,7 @@ body {
   background-color: $beige-color;
   color: $brown-color;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Berlin', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -139,4 +139,24 @@ input {
 a, a:visited, a:hover, a:active {
   color: inherit;
   text-decoration: none;
+}
+
+@font-face {
+    font-family: "Berlin";
+    src: url("./fonts/berlin.ttf") format('truetype');
+}
+@font-face {
+    font-family: "Berlin";
+    src: url("./fonts/berlin-italic.ttf") format('truetype');
+    font-style: italic;
+}
+@font-face {
+    font-family: "Berlin";
+    src: url("./fonts/berlin-bold.ttf") format('truetype');
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Berlin";
+    src: url("./fonts/berlin-x-bold.ttf") format('truetype');
+    font-weight: 900;
 }
