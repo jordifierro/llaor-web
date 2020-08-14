@@ -1,10 +1,15 @@
 import React from 'react';
 
+import Word from 'dictionary/entities/Word';
+import Meaning from 'dictionary/entities/Meaning';
+import WordComponent from 'dictionary/components/WordComponent';
+
 class ProjectView extends React.Component {
 
     render = () => {
         return (
-            <div className='content-box'>
+            <div>
+                <WordComponent word={new Word("Llaor", [new Meaning("", "", "Llavor", [], [])])} />
                 <div>
                     <p>
                         Benviguts al projecte Llaor!
