@@ -8,6 +8,13 @@ import iconCross from 'images/icon_cross.png'
 const NavbarComponent = () => {
     const [open, setOpen] = useState(false)
 
+    if (open) {
+        document.body.style.overflow = "hidden";
+    }
+    else {
+        document.body.style.overflow = "initial";
+    }
+
     return (
         <nav>
             <div class="nav-images">
