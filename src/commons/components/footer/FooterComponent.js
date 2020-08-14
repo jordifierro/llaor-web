@@ -6,6 +6,7 @@ const FooterComponent = () => {
     return (
         <footer>
             <img src={backgroundBottomMountains}/>
+            <div class="background" /> 
         </footer>
     );
 };

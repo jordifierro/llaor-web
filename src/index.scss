@@ -33,6 +33,7 @@ nav {
 }
 
 .top-mountains {
+  margin-top: -1px;
   overflow: hidden;
   height: 63px;
 
@@ -47,11 +48,10 @@ footer, content:after {
 
 footer {
   overflow: hidden;
-  background-color: $brown-color;
 }
 
 .content {
-  min-height: calc(100% - 316px);
+  min-height: calc(100% - 315px);
   width: 100%;
   text-align: center;
   padding: 1.2rem;
@@ -63,7 +63,7 @@ footer {
   }
 
   .content {
-    min-height: calc(100% - 391px);
+    min-height: calc(100% - 390px);
   }
 }
 
