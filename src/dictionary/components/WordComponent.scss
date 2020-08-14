@@ -3,10 +3,15 @@
 .word-container {
     text-align: left;
     padding: 1.3rem;
-    max-width: 500px;
     margin: 1.2rem auto;
     box-sizing: border-box;
     border: 7px solid $brown-color;
+}
+
+@media only screen and (min-width: 768px) {
+    .word-container {
+        max-width: 600px;
+    }
 }
 
 .word-name {

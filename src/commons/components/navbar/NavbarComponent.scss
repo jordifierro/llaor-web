@@ -63,6 +63,7 @@ nav {
             border-bottom: none;
             font-size: x-large;
             padding: 10px;
+            font-weight: bold;
         }
 
         li.space {
@@ -120,8 +121,8 @@ nav {
                 border-bottom: none;
                 font-size: medium;
                 padding: 24px;
-                border-top: 5px solid black;
-                border-bottom: 5px solid black;
+                border-top: 5px solid $brown-color;
+                border-bottom: 5px solid $brown-color;
 
                 .active {
                     text-decoration: underline;

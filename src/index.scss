@@ -114,16 +114,6 @@ ul {
   padding: 0;
 }
 
-li {
-  border-bottom: 1px solid $brown-color;
-}
-
-@media only screen and (min-width: 601px) {
-  li {
-    border: none;
-  }
-}
-
 input {
     outline: none;
     height: 2.4rem;
