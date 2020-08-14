@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 
 import './index.scss';
 import NavbarComponent from 'commons/components/navbar/NavbarComponent';
+import FooterComponent from 'commons/components/footer/FooterComponent';
 
 import ProjectView from 'ProjectView';
 import AboutView from 'AboutView';
@@ -19,27 +20,30 @@ const apiHost = process.env['REACT_APP_API_HOST'];
 ReactDOM.render(
     <Router>
         <NavbarComponent />
-        <Switch>
-            <Route exact path="/" component={DictionaryView} />
-            <Route exact path="/projecte" component={ProjectView} />
-            <Route exact path="/natri" component={AboutView} />
-            <Route exact path="/contacte" component={ContactView} />
-            <Route exact path="/llengua/diccionari" component={DictionaryView} />
-            <Route exact path="/llengua/diccionari/lletres" render={() =>
-                <Redirect to="/llengua/diccionari/lletres/a"/>} />
-            <Route path="/llengua/diccionari/lletres/:id" render={({match}) => (
-                <WordsByFirstLetterView letter={match.params.id}
-                    wordApiRepository={new WordApiRepository(apiHost)} /> )}
-            />
-            <Route path="/llengua/diccionari/cerca/:text?" render={({match}) => (
-                <WordsSearchView text={match.params.text}
-                    wordApiRepository={new WordApiRepository(apiHost)} /> )}
-            />
-            <Route path="/llengua/diccionari/mots/:id" render={({match}) => (
-                <WordView wordId={match.params.id}
-                    wordApiRepository={new WordApiRepository(apiHost)} /> )}
-            />
-            <Route><Redirect to="/" /></Route>
-        </Switch>
+        <div class="content">
+            <Switch>
+                <Route exact path="/" component={DictionaryView} />
+                <Route exact path="/projecte" component={ProjectView} />
+                <Route exact path="/natri" component={AboutView} />
+                <Route exact path="/contacte" component={ContactView} />
+                <Route exact path="/llengua/diccionari" component={DictionaryView} />
+                <Route exact path="/llengua/diccionari/lletres" render={() =>
+                    <Redirect to="/llengua/diccionari/lletres/a"/>} />
+                <Route path="/llengua/diccionari/lletres/:id" render={({match}) => (
+                    <WordsByFirstLetterView letter={match.params.id}
+                        wordApiRepository={new WordApiRepository(apiHost)} /> )}
+                />
+                <Route path="/llengua/diccionari/cerca/:text?" render={({match}) => (
+                    <WordsSearchView text={match.params.text}
+                        wordApiRepository={new WordApiRepository(apiHost)} /> )}
+                />
+                <Route path="/llengua/diccionari/mots/:id" render={({match}) => (
+                    <WordView wordId={match.params.id}
+                        wordApiRepository={new WordApiRepository(apiHost)} /> )}
+                />
+                <Route><Redirect to="/" /></Route>
+            </Switch>
+        </div>
+        <FooterComponent />
     </Router>
 , document.getElementById('root'));
