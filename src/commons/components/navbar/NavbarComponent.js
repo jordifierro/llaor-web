@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logoHorizontal from 'images/logo_horizontal.png'
 import logoVertical from 'images/logo_vertical.png'
 import iconHamburger from 'images/icon_hamburger.png'
@@ -12,10 +12,10 @@ const NavbarComponent = () => {
         <nav>
             <div class="nav-images">
                 <div class="logo">
-                    <Link to="/" onClick={() => setOpen(false)}>
+                    <NavLink to="/" onClick={() => setOpen(false)}>
                         <img src={logoHorizontal} class="hidden-if-desktop"/>
                         <img src={logoVertical} class="hidden-if-mobile"/>
-                    </Link>
+                    </NavLink>
                 </div>
                 <div class="icon" onClick={() => setOpen(!open)}>
                     { !open && <img src={iconHamburger} /> }
@@ -25,25 +25,37 @@ const NavbarComponent = () => {
             <div className={`nav-menu ${open ? "" : "hidden-if-mobile"}`}>
                 <ul>
                     <li>
-                        <Link to="/projecte" onClick={() => setOpen(false)}>
+                        <NavLink
+                            to="/projecte"
+                            onClick={() => setOpen(false)}
+                            activeClassName="active">
                             Projecte
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/llengua/diccionari" onClick={() => setOpen(false)}>
+                        <NavLink
+                            to="/llengua/diccionari"
+                            onClick={() => setOpen(false)}
+                            activeClassName="active">
                             Diccionari
-                        </Link>
+                        </NavLink>
                     </li>
                     <li class="space"></li>
                     <li>
-                        <Link to="/natri" onClick={() => setOpen(false)}>
+                        <NavLink
+                            to="/natri"
+                            onClick={() => setOpen(false)}
+                            activeClassName="active">
                             Natri
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to="/contacte" onClick={() => setOpen(false)}>
+                        <NavLink
+                            to="/contacte"
+                            onClick={() => setOpen(false)}
+                            activeClassName="active">
                             Contacte
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </div>

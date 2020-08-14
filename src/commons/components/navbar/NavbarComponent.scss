@@ -119,6 +119,10 @@ nav {
                 padding: 24px;
                 border-top: 5px solid black;
                 border-bottom: 5px solid black;
+
+                .active {
+                    text-decoration: underline;
+                }
             }
 
             li.space {
