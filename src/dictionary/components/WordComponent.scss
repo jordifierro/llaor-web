@@ -1,20 +1,17 @@
 @import "../../_global.scss";
 
 .word-container {
+    text-align: left;
     padding: 1.3rem;
     max-width: 500px;
     margin: 1.2rem auto;
     box-sizing: border-box;
-}
-
-@media only screen and (min-width: 601px) {
-    .word-container {
-        border: 3px solid $brown-color;
-    }
+    border: 7px solid $brown-color;
 }
 
 .word-name {
     margin: .7rem 0;
+    font-weight: 900;
 }
 
 .meaning-container {
@@ -31,6 +28,7 @@
 }
 
 .meaning-synonyms, .meaning-related {
+    font-weight: 900;
     margin: 1.3rem 0;
 }
 

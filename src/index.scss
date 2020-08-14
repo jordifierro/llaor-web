@@ -85,26 +85,25 @@ label {
 
 button, button:hover {
   font-size: .8rem;
-  background-color: transparent;
-  -webkit-tap-highlight-color: transparent;
+  background-color: $brown-color;
+  -webkit-tap-highlight-color: $brown-color;
   padding: .7rem;
   margin: .4rem;
-  border: 0.5px solid $brown-color;
+  border: 1px solid $brown-color;
   border-radius: 5px;
-  color: $brown-color;
+  color: $beige-color;
   text-transform: uppercase;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: bold;
   transition: background-color .2s ease;
 }
 
 button:hover, button:focus {
-  background-color: darken($brown-color, 10%);
-  outline: none;
+  background-color: $bronze-color;
 }
 
 button.active {
-  background-color: $brown-color;
+  background-color: $bronze-color;
   font-weight: bold;
   color: $beige-color;
 }

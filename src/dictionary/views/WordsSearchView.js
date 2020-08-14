@@ -65,9 +65,7 @@ class WordsSearchView extends React.Component {
                 <div className='searcher'>
                     <ul>{searcherHtml}</ul>
                 </div>
-                <div className='content'>
-                    <ul>{wordsHtml}</ul>
-                </div>
+                <ul>{wordsHtml}</ul>
             </React.Fragment>
         )
     };

@@ -57,9 +57,7 @@ class WordsByFirstLetterView extends React.Component {
                 <div className='letters-picker'>
                     <ul>{letterPickerHtml}</ul>
                 </div>
-                <div className='content'>
-                    <ul>{wordsHtml}</ul>
-                </div>
+                <ul>{wordsHtml}</ul>
             </React.Fragment>
         )
     };
