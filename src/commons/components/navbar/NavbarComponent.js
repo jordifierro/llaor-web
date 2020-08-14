@@ -58,10 +58,10 @@ const NavbarComponent = () => {
                     </li>
                     <li>
                         <NavLink
-                            to="/contacte"
+                            to="/mane"
                             onClick={() => setOpen(false)}
                             activeClassName="active">
-                            Contacte
+                            Mane?
                         </NavLink>
                     </li>
                 </ul>

@@ -29,7 +29,7 @@ ReactDOM.render(
                 <Route exact path="/" component={DictionaryView} />
                 <Route exact path="/projecte" component={ProjectView} />
                 <Route exact path="/natri" component={AboutView} />
-                <Route exact path="/contacte" component={ContactView} />
+                <Route exact path="/mane" component={ContactView} />
                 <Route exact path="/llengua/diccionari" component={DictionaryView} />
                 <Route exact path="/llengua/diccionari/lletres" render={() =>
                     <Redirect to="/llengua/diccionari/lletres/a"/>} />
