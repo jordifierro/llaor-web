@@ -1,7 +1,49 @@
 @import "../../_global.scss";
 
-.searcher {
+.search-content {
+    margin-top: 20px auto;
     width: 100%;
-    text-align: center;
-    padding: 1.2rem;
+
+    .searcher {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        background: none;
+        border: none;
+        border-bottom: 4px solid $brown-color;
+        border-radius: 0;
+        font-size: x-large;
+        font-weight: 900;
+        padding: 22px 0;
+    }
+
+    img {
+        width: 27px;
+        height: 23px;
+        display: inline-block;
+        position: absolute;
+        top: 16px;
+        right: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .search-content {
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .searcher {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        img {
+            right: -16px;
+        }
+    }
 }

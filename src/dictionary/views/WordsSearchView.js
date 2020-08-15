@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import WordComponent from 'dictionary/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
+import iconSearch from 'images/icon_search.png';
 
 class WordsSearchView extends React.Component {
     constructor(props) {
@@ -39,9 +40,9 @@ class WordsSearchView extends React.Component {
     render = () => {
         const searcherHtml =
             <form onSubmit={this.handleSubmit}>
-                <input classname="search-input" type="text" placeholder="cerca.."
+                <input classname="search-input" type="text" placeholder="Cerca al diccionari..."
                     defaultValue={this.props.text} ref={(element) => { this.input = element }} />
-                <button type="submit">Cerca</button>
+                <img src={iconSearch} />
             </form>;
         let wordsHtml = null;
         if (this.state.isFetching) {
@@ -61,12 +62,10 @@ class WordsSearchView extends React.Component {
             });
         }
         return (
-            <React.Fragment>
-                <div className='searcher'>
-                    <ul>{searcherHtml}</ul>
-                </div>
+            <div class='search-content'>
+                <div className='searcher'>{searcherHtml}</div>
                 <ul>{wordsHtml}</ul>
-            </React.Fragment>
+            </div>
         )
     };
 };
