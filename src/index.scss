@@ -54,7 +54,7 @@ footer {
   min-height: calc(100% - 315px);
   width: 100%;
   text-align: center;
-  padding: 1.2rem;
+  padding: 15px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -64,6 +64,7 @@ footer {
 
   .content {
     min-height: calc(100% - 390px);
+    padding: 20px 10%;
   }
 }
 
