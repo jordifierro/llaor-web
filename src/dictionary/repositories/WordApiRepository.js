@@ -14,14 +14,14 @@ export class WordApiRepository {
     };
 
     getWordsByFirstLetter = letter => {
-        const url = `${this.apiHost}/words?first_letter=${letter}`;
+        const url = `${this.apiHost}/words/?first_letter=${letter}`;
         return fetch(url)
             .then(response => response.json())
             .then(json => parseJsonWords(json));
     }
 
     searchWords = text => {
-        const url = `${this.apiHost}/words?search=${text}`;
+        const url = `${this.apiHost}/words/?search=${text}`;
         return fetch(url)
             .then(response => response.json())
             .then(json => parseJsonWords(json));
