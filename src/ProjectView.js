@@ -14,10 +14,12 @@ class ProjectView extends React.Component {
                     <p>
                         Benviguts al projecte Llaor!
                     </p>
+                    <br/>
                     <p>
                         Lo nostre objectiu è la digitalizació i divulgació de la llengua i cultura pallaresa,
                         que actualment se troben en perill d'extinció.
                     </p>
+                    <br/>
                     <p>
                         Ham empeçat pela secció de la llengua, que contí un diccionari de mots originaris de çò nostre.
                         Esperem que sigue la llaor...
