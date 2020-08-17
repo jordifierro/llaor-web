@@ -55,6 +55,7 @@ class WordsByFirstLetterView extends React.Component {
         }
         return (
             <div class='letters-content'>
+                <h2 class='hidden-if-mobile'>Explora lo Diccionari lletra a lletra</h2>
                 <KeyboardComponent activeLetter={this.props.letter} onClick={this.letterClick} />
                 <ul>{wordsHtml}</ul>
             </div>

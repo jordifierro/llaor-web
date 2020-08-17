@@ -59,6 +59,15 @@ footer {
   padding: 15px;
 }
 
+.hidden-if-mobile {
+    visibility: hidden;
+    display: none;
+}
+
+.hidden-if-desktop {
+    visibility: visible;
+    display: block;
+}
 @media only screen and (min-width: 768px) {
   nav {
     height: 140px;
@@ -68,10 +77,25 @@ footer {
     min-height: calc(100% - 390px);
     padding: 20px 10%;
   }
+
+    .hidden-if-mobile {
+        visibility: visible;
+        display: block;
+    }
+
+    .hidden-if-desktop {
+        visibility: hidden;
+        display: none;
+    }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
 }
 
 h2 {

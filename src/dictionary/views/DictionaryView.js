@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import iconSearch from 'images/icon_search.png';
 
 import KeyboardComponent from 'commons/components/keyboard/KeyboardComponent'
 import WordView from 'dictionary/views/WordView'
@@ -10,7 +11,18 @@ class DictionaryView extends React.Component {
     render = () => {
         return (
             <div className='dictionary-content'>
-                <KeyboardComponent activeLetter='' onClick={letter => this.props.history.push(`/llengua/diccionari/lletres/${letter}`)} />
+                <div className='explore'>
+                    <h2>Explora lo Diccionari pallarés</h2>
+                    <KeyboardComponent activeLetter=''
+                        onClick={letter => this.props.history.push(`/llengua/diccionari/lletres/${letter}`)} />
+                    <div className='search hidden-if-desktop'
+                        onClick={() => this.props.history.push('/llengua/diccionari/cerca')}>
+                        Cerca per text
+                    </div>
+                    <img src={iconSearch}
+                        className='icon-search hidden-if-mobile'
+                        onClick={() => this.props.history.push('/llengua/diccionari/cerca')} />
+                </div>
                 <div className='daily-word'>
                     <div className='explanation'>
                         <h2>Lo mot del dia</h2>

@@ -2,23 +2,13 @@
 
 .keyboard {
 
-    .hidden-if-mobile {
-        visibility: hidden;
-        display: none;
-    }
-
-    .hidden-if-desktop {
-        visibility: visible;
-        display: block;
-    }
-
     .keyboard-button {
         background-color: $brown-color;
         color: $white-color;
         font-size: x-large;
         font-weight: bold;
         padding: 0.5rem;
-
+        cursor: pointer;
     }
 
     ul {
@@ -56,16 +46,6 @@
 
     .keyboard {
 
-        .hidden-if-mobile {
-            visibility: visible;
-            display: block;
-        }
-
-        .hidden-if-desktop {
-            visibility: hidden;
-            display: none;
-        }
-
         ul {
             background-color: transparent;
             padding: 1rem;
@@ -75,7 +55,7 @@
             width: 50px;
             height: 40px;
             font-size: small;
-            background-color: $brown-color;
+            background-color: $purple-color;
             color: $white-color;
             padding: .7rem;
             margin: .4rem;
@@ -94,10 +74,6 @@
             background-color: $bronze-color;
             color: $brown-color;
             font-weight: bold;
-        }
-
-        h1 {
-            font-weight: 900;
         }
     }
 }

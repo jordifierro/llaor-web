@@ -31,7 +31,7 @@ const WordComponent = props => {
     );
     return (
         <div className="word-container">
-            <h1 className="word-name">{props.word.id}</h1>
+            <h2 className="word-name">{props.word.id}</h2>
             {meaningsHtml}
         </div>
     );

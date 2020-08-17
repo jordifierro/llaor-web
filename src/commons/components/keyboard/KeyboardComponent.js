@@ -7,10 +7,12 @@ const KeyboardComponent = ({ activeLetter, onClick }) => {
                  'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'x'];
     const letterPickerHtml = abc.map(letter =>
             <button className={letter === activeLetter && 'active'}
-                onClick={() => onClick(letter)}>{letter}</button>);
+                onClick={() => {
+                    setOpen(false);
+                    onClick(letter);
+                }}>{letter}</button>);
 
     return (<div className='keyboard'>
-                <h1 class='hidden-if-mobile'>Explora lo Diccionari lletra a lletra</h1>
                 <div
                     class='keyboard-button hidden-if-desktop'
                     onClick={() => setOpen(!open)}>
