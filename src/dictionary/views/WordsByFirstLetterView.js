@@ -2,9 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import WordComponent from 'dictionary/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
-
-const abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'l', 'm',
-             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'x'];
+import KeyboardComponent from 'commons/components/keyboard/KeyboardComponent';
 
 class WordsByFirstLetterView extends React.Component {
     constructor(props) {
@@ -38,9 +36,6 @@ class WordsByFirstLetterView extends React.Component {
     };
 
     render = () => {
-        const letterPickerHtml = abc.map(letter =>
-            <button className={letter === this.props.letter && 'active'}
-                onClick={() => this.letterClick(letter)}>{letter}</button>);
         let wordsHtml = null;
         if (this.state.isFetching) {
             wordsHtml = <LoaderComponent />;
@@ -60,15 +55,7 @@ class WordsByFirstLetterView extends React.Component {
         }
         return (
             <div class='letters-content'>
-                <div className='letters-picker'>
-                    <h1 class='hidden-if-mobile'>Explora lo Diccionari lletra a lletra</h1>
-                    <div
-                        class='letters-picker-button hidden-if-desktop'
-                        onClick={() => this.setState(prevState => ({showPicker: !prevState.showPicker}))}>
-                        Mostra totes les lletres
-                    </div>
-                    <ul class={this.state.showPicker ? "" : "hidden-if-mobile"}>{letterPickerHtml}</ul>
-                </div>
+                <KeyboardComponent activeLetter={this.props.letter} onClick={this.letterClick} />
                 <ul>{wordsHtml}</ul>
             </div>
         )

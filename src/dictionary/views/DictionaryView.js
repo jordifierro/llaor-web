@@ -1,6 +1,8 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+import KeyboardComponent from 'commons/components/keyboard/KeyboardComponent'
 import WordView from 'dictionary/views/WordView'
 
 class DictionaryView extends React.Component {
@@ -8,6 +10,7 @@ class DictionaryView extends React.Component {
     render = () => {
         return (
             <div className='dictionary-content'>
+                <KeyboardComponent activeLetter='' onClick={letter => this.props.history.push(`/llengua/diccionari/lletres/${letter}`)} />
                 <div className='daily-word'>
                     <div className='explanation'>
                         <h2>Lo mot del dia</h2>
@@ -27,4 +30,4 @@ class DictionaryView extends React.Component {
     };
 };
 
-export default DictionaryView;
+export default withRouter(DictionaryView);
