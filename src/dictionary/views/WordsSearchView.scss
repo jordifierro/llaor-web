@@ -18,6 +18,12 @@
         font-size: x-large;
         font-weight: 900;
         padding: 22px 0;
+        color: $brown-color;
+    }
+    
+    input::placeholder {
+        color: $brown-color;
+        opacity: 0.7;
     }
 
     img {

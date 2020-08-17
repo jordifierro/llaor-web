@@ -40,7 +40,7 @@ class WordsSearchView extends React.Component {
     render = () => {
         const searcherHtml =
             <form onSubmit={this.handleSubmit}>
-                <input classname="search-input" type="text" placeholder="Cerca al diccionari..."
+                <input classname="search-input" type="text" placeholder="Cerca al Diccionari..."
                     defaultValue={this.props.text} ref={(element) => { this.input = element }} />
                 <img src={iconSearch} />
             </form>;
