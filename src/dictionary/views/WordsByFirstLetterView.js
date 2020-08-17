@@ -12,7 +12,8 @@ class WordsByFirstLetterView extends React.Component {
         this.state = {
             isFetching: true,
             error: false,
-            words: null
+            words: null,
+            showPicker: false
         };
     }
 
@@ -31,10 +32,15 @@ class WordsByFirstLetterView extends React.Component {
         }
     }
 
+    letterClick = letter => {
+        this.setState({showPicker: false});
+        this.props.history.push(`/llengua/diccionari/lletres/${letter}`);
+    };
+
     render = () => {
         const letterPickerHtml = abc.map(letter =>
             <button className={letter === this.props.letter && 'active'}
-                onClick={() => this.props.history.push(`/llengua/diccionari/lletres/${letter}`)}>{letter}</button>);
+                onClick={() => this.letterClick(letter)}>{letter}</button>);
         let wordsHtml = null;
         if (this.state.isFetching) {
             wordsHtml = <LoaderComponent />;
@@ -53,12 +59,18 @@ class WordsByFirstLetterView extends React.Component {
             });
         }
         return (
-            <React.Fragment>
+            <div class='letters-content'>
                 <div className='letters-picker'>
-                    <ul>{letterPickerHtml}</ul>
+                    <h1 class='hidden-if-mobile'>Explora lo Diccionari lletra a lletra</h1>
+                    <div
+                        class='letters-picker-button hidden-if-desktop'
+                        onClick={() => this.setState(prevState => ({showPicker: !prevState.showPicker}))}>
+                        Mostra totes les lletres
+                    </div>
+                    <ul class={this.state.showPicker ? "" : "hidden-if-mobile"}>{letterPickerHtml}</ul>
                 </div>
                 <ul>{wordsHtml}</ul>
-            </React.Fragment>
+            </div>
         )
     };
 };
