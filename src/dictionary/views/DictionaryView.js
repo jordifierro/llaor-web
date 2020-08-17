@@ -1,30 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import WordView from 'dictionary/views/WordView'
+
 class DictionaryView extends React.Component {
 
     render = () => {
         return (
-            <div className='content-box'>
-                <div>
-                    <p>
-                        En aguesta secció podreu trobar una bona recossira de mots en pallarés.
-                        Podeu anar lletra per lletra o bé cercar per text. A esbarriar!
-                    </p>
-                </div>
-                <div> 
-                    <Link to="/llengua/diccionari/lletres">
-                        <button type="button">
-                            ABCedari
-                        </button>
-                    </Link>
-                </div>
-                <div>
-                    <Link to="/llengua/diccionari/cerca">
-                        <button type="button">
-                            Cerca
-                        </button>
-                    </Link>
+            <div className='dictionary-content'>
+                <div className='daily-word'>
+                    <div className='explanation'>
+                        <h2>Lo mot del dia</h2>
+                        <div className='divider' />
+                        <p>
+                            Amplieu les vostres coneixements de pallarés
+                            i aprofiteu pra fer anar una nova paraula cada dia.
+                            Cal cap patir que no se gasten... A plairet donques!
+                        </p>
+                    </div>
+                    <div className='word'>
+                        <WordView wordId='daily' wordApiRepository={this.props.wordApiRepository} />
+                    </div>
                 </div>
             </div>
         )

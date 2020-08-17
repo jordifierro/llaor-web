@@ -26,11 +26,13 @@ ReactDOM.render(
         </div>
         <div class="content">
             <Switch>
-                <Route exact path="/" component={DictionaryView} />
+                <Route exact path="/" render={() => (
+                    <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} /> )} />
                 <Route exact path="/projecte" component={ProjectView} />
                 <Route exact path="/natri" component={AboutView} />
                 <Route exact path="/mane" component={ContactView} />
-                <Route exact path="/llengua/diccionari" component={DictionaryView} />
+                <Route exact path="/llengua/diccionari" render={() => (
+                    <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} /> )} />
                 <Route exact path="/llengua/diccionari/lletres" render={() =>
                     <Redirect to="/llengua/diccionari/lletres/a"/>} />
                 <Route path="/llengua/diccionari/lletres/:id" render={({match}) => (
