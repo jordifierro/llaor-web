@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
+import * as serviceWorker from 'serviceWorker';
+
 import './index.scss';
 import NavbarComponent from 'commons/components/navbar/NavbarComponent';
 import FooterComponent from 'commons/components/footer/FooterComponent';
@@ -53,3 +55,5 @@ ReactDOM.render(
         <FooterComponent />
     </Router>
 , document.getElementById('root'));
+
+serviceWorker.register();
