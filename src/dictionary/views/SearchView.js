@@ -1,73 +1,65 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import WordComponent from 'dictionary/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
 import iconSearch from 'images/icon_search.png';
+import { store } from 'dictionary/views/store';
 
-class SearchView extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isFetching: false,
-            error: false,
-            words: null
-        };
-    }
+const SearchView = props => {
 
-    searchWords = text => {
-        this.setState({isFetching: true, error: false});
-        this.props.wordApiRepository.searchWords(text)
-            .then(words => this.setState({isFetching: false, error: false, words: words}))
-            .catch(reason => this.setState({isFetching: false, error: true}));
-    }
+    const { searchState, dispatch } = useContext(store);
+    const searchText = props.match.params.text;
+    var input = null;
 
-    componentDidMount = () => {
-        this.searchWords(this.props.match.params.text);
-    }
+    useEffect(() => {
+        if (searchText !== searchState.text) {
+            dispatch({ type: 'STORE_SEARCH', payload: { text: searchText, isFetching: true, error: false, words: null }  });
+            props.wordApiRepository.searchWords(searchText)
+                .then(words => {
+                    dispatch({ type: 'STORE_SEARCH', payload: { text: searchText, isFetching: false, error: false, words: words }  });
+                })
+                .catch(reason => {
+                    dispatch({ type: 'STORE_SEARCH', payload: { text: searchText, isFetching: false, error: true }  });
 
-    componentDidUpdate = (prevProps) => {
-        if (prevProps.match.params.text !== this.props.match.params.text) {
-            this.searchWords(this.props.match.params.text);
+                });
         }
-    }
+    });
 
-    handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         if (e) e.preventDefault();
-        const text = this.input.value;
-        this.props.history.push(`/llengua/diccionari/cerca/${text}`);
+        const text = input.value;
+        props.history.push(`/llengua/diccionari/cerca/${text}`);
     }
 
-    render = () => {
-        const searcherHtml =
-            <form onSubmit={this.handleSubmit}>
-                <input classname="search-input" type="text" placeholder="Cerca al Diccionari..."
-                    defaultValue={this.props.match.params.text} ref={(element) => { this.input = element }} />
-                <img src={iconSearch} />
-            </form>;
-        let wordsHtml = null;
-        if (this.state.isFetching) {
-            wordsHtml = <LoaderComponent />;
-        }
-        else if (this.state.error) {
-            wordsHtml = <p>Error!</p>;
-        }
-        else if (this.state.words !== null) {
-            wordsHtml = this.state.words.map(word => {
-                return (
-                    <li>
-                        <WordComponent word={word}
-                            onWordClick={wordId => this.props.history.push(`/llengua/diccionari/mots/${wordId}`)}/>
-                    </li>
-                )
-            });
-        }
-        return (
-            <div class='search-content'>
-                <div className='searcher'>{searcherHtml}</div>
-                <ul>{wordsHtml}</ul>
-            </div>
-        )
-    };
+    const searcherHtml =
+        <form onSubmit={handleSubmit}>
+            <input classname="search-input" type="text" placeholder="Cerca al Diccionari..."
+                defaultValue={searchText} ref={(element) => { input = element }} />
+            <img src={iconSearch} />
+        </form>;
+    let wordsHtml = null;
+    if (searchState.isFetching) {
+        wordsHtml = <LoaderComponent />;
+    }
+    else if (searchState.error) {
+        wordsHtml = <p>Error!</p>;
+    }
+    else if (searchState.words !== null) {
+        wordsHtml = searchState.words.map(word => {
+            return (
+                <li>
+                    <WordComponent word={word}
+                        onWordClick={wordId => props.history.push(`/llengua/diccionari/mots/${wordId}`)}/>
+                </li>
+            )
+        });
+    }
+    return (
+        <div class='search-content'>
+            <div className='searcher'>{searcherHtml}</div>
+            <ul>{wordsHtml}</ul>
+        </div>
+    );
 };
 
 export default withRouter(SearchView);

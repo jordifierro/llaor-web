@@ -25,8 +25,12 @@ const StateProvider = ( { children } ) => {
                     ...state,
                     letters: action.payload
                 };
+            case 'STORE_SEARCH':
+                return {
+                    ...state,
+                    search: action.payload
+                };
             default:
-                console.log(action);
                 throw new Error();
         };
     }, initialState);
