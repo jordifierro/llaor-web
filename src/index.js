@@ -14,7 +14,7 @@ import ContactView from 'ContactView';
 import DictionaryView from 'dictionary/views/DictionaryView';
 import WordView from 'dictionary/views/WordView';
 import WordsByFirstLetterView from 'dictionary/views/WordsByFirstLetterView';
-import WordsSearchView from 'dictionary/views/WordsSearchView';
+import SearchView from 'dictionary/views/SearchView';
 import { WordApiRepository } from 'dictionary/repositories/WordApiRepository';
 import backgroundTopMountains from 'images/background_top_mountains.png'
 
@@ -50,7 +50,7 @@ ReactDOM.render(
                     <WordsByFirstLetterView wordApiRepository={new WordApiRepository(apiHost)} />
                 </Route>
                 <Route path="/llengua/diccionari/cerca/:text?">
-                    <WordsSearchView wordApiRepository={new WordApiRepository(apiHost)} />
+                    <SearchView wordApiRepository={new WordApiRepository(apiHost)} />
                 </Route>
                 <Route path="/llengua/diccionari/mots/:id" render={({match}) => (
                     <WordView wordId={match.params.id}

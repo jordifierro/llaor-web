@@ -4,7 +4,7 @@ import WordComponent from 'dictionary/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
 import iconSearch from 'images/icon_search.png';
 
-class WordsSearchView extends React.Component {
+class SearchView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -70,4 +70,4 @@ class WordsSearchView extends React.Component {
     };
 };
 
-export default withRouter(WordsSearchView);
+export default withRouter(SearchView);
