@@ -22,12 +22,12 @@ class WordsSearchView extends React.Component {
     }
 
     componentDidMount = () => {
-        this.searchWords(this.props.text);
+        this.searchWords(this.props.match.params.text);
     }
 
     componentDidUpdate = (prevProps) => {
-        if (prevProps.text !== this.props.text) {
-            this.searchWords(this.props.text);
+        if (prevProps.match.params.text !== this.props.match.params.text) {
+            this.searchWords(this.props.match.params.text);
         }
     }
 
@@ -41,7 +41,7 @@ class WordsSearchView extends React.Component {
         const searcherHtml =
             <form onSubmit={this.handleSubmit}>
                 <input classname="search-input" type="text" placeholder="Cerca al Diccionari..."
-                    defaultValue={this.props.text} ref={(element) => { this.input = element }} />
+                    defaultValue={this.props.match.params.text} ref={(element) => { this.input = element }} />
                 <img src={iconSearch} />
             </form>;
         let wordsHtml = null;

@@ -17,7 +17,7 @@ class WordsByFirstLetterView extends React.Component {
 
     getWordsByFirstLetter = letter => {
         this.setState({isFetching: true, error: false});
-        this.props.wordApiRepository.getWordsByFirstLetter(this.props.letter)
+        this.props.wordApiRepository.getWordsByFirstLetter(this.props.match.params.letter)
             .then(words => this.setState({isFetching: false, error: false, words: words}))
             .catch(reason => this.setState({isFetching: false, error: true}));
     }
@@ -25,8 +25,8 @@ class WordsByFirstLetterView extends React.Component {
     componentDidMount = () => this.getWordsByFirstLetter(this.state.letter);
 
     componentDidUpdate = (prevProps) => {
-        if (prevProps.letter !== this.props.letter) {
-            this.getWordsByFirstLetter(this.props.letter);
+        if (prevProps.match.params.letter !== this.props.match.params.letter) {
+            this.getWordsByFirstLetter(this.props.match.params.letter);
         }
     }
 
@@ -56,7 +56,7 @@ class WordsByFirstLetterView extends React.Component {
         return (
             <div class='letters-content'>
                 <h2 class='hidden-if-mobile'>Explora lo Diccionari lletra a lletra</h2>
-                <KeyboardComponent activeLetter={this.props.letter} onClick={this.letterClick} />
+                <KeyboardComponent activeLetter={this.props.match.params.letter} onClick={this.letterClick} />
                 <ul>{wordsHtml}</ul>
             </div>
         )

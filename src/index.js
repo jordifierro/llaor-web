@@ -28,23 +28,30 @@ ReactDOM.render(
         </div>
         <div class="content">
             <Switch>
-                <Route exact path="/" render={() => (
-                    <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} /> )} />
-                <Route exact path="/projecte" component={ProjectView} />
-                <Route exact path="/natri" component={AboutView} />
-                <Route exact path="/mane" component={ContactView} />
-                <Route exact path="/llengua/diccionari" render={() => (
-                    <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} /> )} />
-                <Route exact path="/llengua/diccionari/lletres" render={() =>
-                    <Redirect to="/llengua/diccionari/lletres/a"/>} />
-                <Route path="/llengua/diccionari/lletres/:id" render={({match}) => (
-                    <WordsByFirstLetterView letter={match.params.id}
-                        wordApiRepository={new WordApiRepository(apiHost)} /> )}
-                />
-                <Route path="/llengua/diccionari/cerca/:text?" render={({match}) => (
-                    <WordsSearchView text={match.params.text}
-                        wordApiRepository={new WordApiRepository(apiHost)} /> )}
-                />
+                <Route exact path="/">
+                    <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} />
+                </Route>
+                <Route exact path="/projecte">
+                    <ProjectView />
+                </Route>
+                <Route exact path="/natri">
+                    <AboutView />
+                </Route>
+                <Route exact path="/mane">
+                    <ContactView />
+                </Route>
+                <Route exact path="/llengua/diccionari">
+                    <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} />
+                </Route>
+                <Route exact path="/llengua/diccionari/lletres">
+                    <Redirect to="/llengua/diccionari/lletres/a"/>
+                </Route>
+                <Route path="/llengua/diccionari/lletres/:letter">
+                    <WordsByFirstLetterView wordApiRepository={new WordApiRepository(apiHost)} />
+                </Route>
+                <Route path="/llengua/diccionari/cerca/:text?">
+                    <WordsSearchView wordApiRepository={new WordApiRepository(apiHost)} />
+                </Route>
                 <Route path="/llengua/diccionari/mots/:id" render={({match}) => (
                     <WordView wordId={match.params.id}
                         wordApiRepository={new WordApiRepository(apiHost)} /> )}
