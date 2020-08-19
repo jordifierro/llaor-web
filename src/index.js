@@ -13,7 +13,7 @@ import AboutView from 'AboutView';
 import ContactView from 'ContactView';
 import DictionaryView from 'dictionary/views/DictionaryView';
 import WordView from 'dictionary/views/WordView';
-import WordsByFirstLetterView from 'dictionary/views/WordsByFirstLetterView';
+import LettersView from 'dictionary/views/LettersView';
 import SearchView from 'dictionary/views/SearchView';
 import { WordApiRepository } from 'dictionary/repositories/WordApiRepository';
 import backgroundTopMountains from 'images/background_top_mountains.png'
@@ -47,7 +47,7 @@ ReactDOM.render(
                     <Redirect to="/llengua/diccionari/lletres/a"/>
                 </Route>
                 <Route path="/llengua/diccionari/lletres/:letter">
-                    <WordsByFirstLetterView wordApiRepository={new WordApiRepository(apiHost)} />
+                    <LettersView wordApiRepository={new WordApiRepository(apiHost)} />
                 </Route>
                 <Route path="/llengua/diccionari/cerca/:text?">
                     <SearchView wordApiRepository={new WordApiRepository(apiHost)} />

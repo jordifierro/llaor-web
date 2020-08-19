@@ -4,7 +4,7 @@ import WordComponent from 'dictionary/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
 import KeyboardComponent from 'commons/components/keyboard/KeyboardComponent';
 
-class WordsByFirstLetterView extends React.Component {
+class LettersView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -63,4 +63,4 @@ class WordsByFirstLetterView extends React.Component {
     };
 };
 
-export default withRouter(WordsByFirstLetterView);
+export default withRouter(LettersView);
