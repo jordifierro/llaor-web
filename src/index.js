@@ -17,50 +17,53 @@ import LettersView from 'dictionary/views/LettersView';
 import SearchView from 'dictionary/views/SearchView';
 import { WordApiRepository } from 'dictionary/repositories/WordApiRepository';
 import backgroundTopMountains from 'images/background_top_mountains.png'
+import { StateProvider } from 'dictionary/views/store';
 
 const apiHost = process.env['REACT_APP_API_HOST'];
 
 ReactDOM.render(
-    <Router>
-        <NavbarComponent />
-        <div class="top-mountains">
-            <img src={backgroundTopMountains} class="top-mountains" />
-        </div>
-        <div class="content">
-            <Switch>
-                <Route exact path="/">
-                    <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} />
-                </Route>
-                <Route exact path="/projecte">
-                    <ProjectView />
-                </Route>
-                <Route exact path="/natri">
-                    <AboutView />
-                </Route>
-                <Route exact path="/mane">
-                    <ContactView />
-                </Route>
-                <Route exact path="/llengua/diccionari">
-                    <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} />
-                </Route>
-                <Route exact path="/llengua/diccionari/lletres">
-                    <Redirect to="/llengua/diccionari/lletres/a"/>
-                </Route>
-                <Route path="/llengua/diccionari/lletres/:letter">
-                    <LettersView wordApiRepository={new WordApiRepository(apiHost)} />
-                </Route>
-                <Route path="/llengua/diccionari/cerca/:text?">
-                    <SearchView wordApiRepository={new WordApiRepository(apiHost)} />
-                </Route>
-                <Route path="/llengua/diccionari/mots/:id" render={({match}) => (
-                    <WordView wordId={match.params.id}
-                        wordApiRepository={new WordApiRepository(apiHost)} /> )}
-                />
-                <Route><Redirect to="/" /></Route>
-            </Switch>
-        </div>
-        <FooterComponent />
-    </Router>
+    <StateProvider wordApiRepository={new WordApiRepository(apiHost)}>
+        <Router>
+            <NavbarComponent />
+            <div class="top-mountains">
+                <img src={backgroundTopMountains} class="top-mountains" />
+            </div>
+            <div class="content">
+                <Switch>
+                    <Route exact path="/">
+                        <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} />
+                    </Route>
+                    <Route exact path="/projecte">
+                        <ProjectView />
+                    </Route>
+                    <Route exact path="/natri">
+                        <AboutView />
+                    </Route>
+                    <Route exact path="/mane">
+                        <ContactView />
+                    </Route>
+                    <Route exact path="/llengua/diccionari">
+                        <DictionaryView wordApiRepository={new WordApiRepository(apiHost)} />
+                    </Route>
+                    <Route exact path="/llengua/diccionari/lletres">
+                        <Redirect to="/llengua/diccionari/lletres/a"/>
+                    </Route>
+                    <Route path="/llengua/diccionari/lletres/:letter">
+                        <LettersView wordApiRepository={new WordApiRepository(apiHost)} />
+                    </Route>
+                    <Route path="/llengua/diccionari/cerca/:text?">
+                        <SearchView wordApiRepository={new WordApiRepository(apiHost)} />
+                    </Route>
+                    <Route path="/llengua/diccionari/mots/:id" render={({match}) => (
+                        <WordView wordId={match.params.id}
+                            wordApiRepository={new WordApiRepository(apiHost)} /> )}
+                    />
+                    <Route><Redirect to="/" /></Route>
+                </Switch>
+            </div>
+            <FooterComponent />
+        </Router>
+    </StateProvider>
 , document.getElementById('root'));
 
 serviceWorker.register();
