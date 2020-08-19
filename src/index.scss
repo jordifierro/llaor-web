@@ -164,19 +164,23 @@ a, a:visited, a:hover, a:active {
 @font-face {
     font-family: "Berlin";
     src: url("./fonts/berlin.ttf") format('truetype');
+    font-display: swap;
 }
 @font-face {
     font-family: "Berlin";
     src: url("./fonts/berlin-italic.ttf") format('truetype');
     font-style: italic;
+    font-display: swap;
 }
 @font-face {
     font-family: "Berlin";
     src: url("./fonts/berlin-bold.ttf") format('truetype');
     font-weight: bold;
+    font-display: swap;
 }
 @font-face {
     font-family: "Berlin";
     src: url("./fonts/berlin-x-bold.ttf") format('truetype');
     font-weight: 900;
+    font-display: swap;
 }
