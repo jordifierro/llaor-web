@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import WordComponent from 'dictionary/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
@@ -7,7 +7,6 @@ import { store } from 'dictionary/views/store';
 
 const LettersView = props => {
 
-    const [showPicker, setShowPicker] = useState(false);
     const { lettersState, dispatch } = useContext(store);
     const letter = props.match.params.letter;
 
@@ -26,7 +25,6 @@ const LettersView = props => {
     });
 
     const letterClick = letter => {
-        setShowPicker(false);
         props.history.push(`/llengua/diccionari/lletres/${letter}`);
     };
 
