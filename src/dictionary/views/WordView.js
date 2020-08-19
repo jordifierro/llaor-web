@@ -1,45 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import WordComponent from 'dictionary/components/WordComponent';
 import LoaderComponent from 'commons/components/loader/LoaderComponent';
 
-class WordView extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isFetching: true,
-            error: false,
-            word: null
-        };
+const WordView = props => {
+
+    const [state, setState] = useState({
+        isFetching: false,
+        error: false,
+        word: null,
+        wordId: null
+    });
+
+    const getWord = () => {
+        setState({ isFetching: true, error: false, wordId: props.wordId });
+        props.wordApiRepository.getWord(props.wordId)
+            .then(word => setState({ isFetching: false, error: false, word: word, wordId: props.wordId }))
+            .catch(reason => setState({ isFetching: false, error: true, wordId: props.wordId }));
     }
 
-    getWord = () => {
-        this.setState({isFetching: true, error: false});
-        this.props.wordApiRepository.getWord(this.props.wordId)
-            .then(word => this.setState({isFetching: false, error: false, word: word}))
-            .catch(reason => this.setState({isFetching: false, error: true}));
-    }
+    useEffect(() => {
+        if (!state.isFetching && state.wordId !== props.wordId) getWord();
+    });
 
-    componentDidMount = () => {
-        this.getWord();
+    if (state.isFetching || state.word === null) {
+        return <LoaderComponent />;
     }
-
-    componentDidUpdate = (prevProps) => {
-        if (prevProps.wordId !== this.props.wordId) {
-            this.getWord();
-        }
+    if (state.error) {
+        return <p>Error!</p>;
     }
-
-    render = () => {
-        if (this.state.isFetching) {
-            return <LoaderComponent />;
-        }
-        if (this.state.error) {
-            return <p>Error!</p>;
-        }
-        return <WordComponent word={this.state.word}
-                    onWordClick={wordId => this.props.history.push(`/llengua/diccionari/mots/${wordId}`)}/>;
-    };
+    return <WordComponent word={state.word}
+                onWordClick={wordId => props.history.push(`/llengua/diccionari/mots/${wordId}`)}/>;
 };
 
 export default withRouter(WordView);
