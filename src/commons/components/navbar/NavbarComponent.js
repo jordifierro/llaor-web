@@ -20,13 +20,13 @@ const NavbarComponent = () => {
             <div class="nav-images">
                 <div class="logo">
                     <NavLink to="/" onClick={() => setOpen(false)}>
-                        <img src={logoHorizontal} class="hidden-if-desktop"/>
-                        <img src={logoVertical} class="hidden-if-mobile"/>
+                        <img src={logoHorizontal} class="hidden-if-desktop" alt="Logo" />
+                        <img src={logoVertical} class="hidden-if-mobile" alt="Logo" />
                     </NavLink>
                 </div>
                 <div class="icon" onClick={() => setOpen(!open)}>
-                    { !open && <img src={iconHamburger} /> }
-                    { open && <img src={iconCross} /> }
+                    { !open && <img src={iconHamburger} alt="Obrir el menú" /> }
+                    { open && <img src={iconCross} alt="Tancar el menú" /> }
                 </div>
             </div>
             <div className={`nav-menu ${open ? "" : "hidden-if-mobile"}`}>

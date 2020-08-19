@@ -8,7 +8,7 @@ const ContactView = () => {
             <div>
                 <p>Mos podeu escriure al correu electrònic:</p>
                 <br />
-                <img src={screenshotEmail} />
+                <img src={screenshotEmail} alt="Adreça electrònica"/>
             </div>
         </div>
     );

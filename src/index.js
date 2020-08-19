@@ -26,7 +26,7 @@ ReactDOM.render(
         <Router>
             <NavbarComponent />
             <div class="top-mountains">
-                <img src={backgroundTopMountains} class="top-mountains" />
+                <img src={backgroundTopMountains} class="top-mountains" alt="" />
             </div>
             <div class="content">
                 <Switch>

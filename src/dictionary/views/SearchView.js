@@ -35,7 +35,7 @@ const SearchView = props => {
         <form onSubmit={handleSubmit}>
             <input classname="search-input" type="text" placeholder="Cerca al Diccionari..."
                 defaultValue={searchText} ref={(element) => { input = element }} />
-            <img src={iconSearch} />
+            <img src={iconSearch} alt="Cerca al Diccionari..." />
         </form>;
     let wordsHtml = null;
     if (searchState.isFetching) {

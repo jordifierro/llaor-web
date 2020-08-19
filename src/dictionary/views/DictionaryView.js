@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import iconSearch from 'images/icon_search.png';
 
 import KeyboardComponent from 'commons/components/keyboard/KeyboardComponent'
@@ -19,6 +18,7 @@ const DictionaryView = props => {
                 </div>
                 <img src={iconSearch}
                     className='icon-search hidden-if-mobile'
+                    alt="Cerca per text"
                     onClick={() => props.history.push('/llengua/diccionari/cerca')} />
             </div>
             <div className='daily-word'>
