@@ -28,7 +28,7 @@ const DictionaryView = props => {
                     <p>
                         Amplieu les vostres coneixements de pallarés
                         i aprofiteu pra fer anar una nova paraula cada dia.
-                        Cal cap patir que no se gasten... A plairet donques!
+                        Cal cap patir que no se gasten... A plaeret donques!
                     </p>
                 </div>
                 <div className='word'>
