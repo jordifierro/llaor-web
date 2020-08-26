@@ -118,17 +118,20 @@ button, button:hover {
   -webkit-tap-highlight-color: $brown-color;
   padding: .7rem;
   margin: .4rem;
-  border: 1px solid $brown-color;
+  border: none;
   border-radius: 5px;
   color: $beige-color;
   text-transform: uppercase;
   cursor: pointer;
   font-weight: bold;
   transition: background-color .2s ease;
+  transition: color .2s ease;
 }
 
 button:hover, button:focus {
   background-color: $bronze-color;
+  color: $brown-color;
+  border-color: $beige-color;
 }
 
 button.active {
