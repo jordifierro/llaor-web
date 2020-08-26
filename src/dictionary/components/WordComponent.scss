@@ -2,7 +2,7 @@
 
 .word-container {
     text-align: left;
-    padding: 1.3rem;
+    padding: 1.5rem;
     margin: 1.2rem auto;
     box-sizing: border-box;
     border: 7px solid $brown-color;
@@ -15,30 +15,32 @@
 }
 
 .word-name {
-    margin: .7rem 0;
     font-weight: 900;
+    margin-bottom: 2rem;
 }
 
-.meaning-container {
-    margin: 2rem 0;
-    padding-left: 1.3rem;
-}
-
-.meaning-description {
-    text-indent: .7rem;
+.meaning-container + .meaning-container {
+    margin-top: 1.2rem;
 }
 
 .meaning-description::first-letter {
     text-transform: capitalize;
 }
 
+.meaning-description + .meaning-synonyms, .meaning-description + .meaning-related {
+    margin-top: 0.6rem;
+}
+
 .meaning-synonyms, .meaning-related {
     font-weight: 900;
-    margin: 1.3rem 0;
+
+    button:first-of-type {
+        margin-left: 0;
+    }
 }
 
 .meaning-type {
-    margin: .3rem 0;
+    margin-bottom: .3rem;
     font-size: .8rem;
 }
 
