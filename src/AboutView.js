@@ -20,7 +20,8 @@ const AboutView = () => {
                 </p>
                 <br />
                 <p>
-                    Lo portal fot goi de vere gràcies al nostre mestre del disseny: Max Castellarnau.
+                    Lo portal fot goi de vere gràcies al nostre mestre del disseny:&nbsp;
+                    <a target="_blank" href="https://artmaximo.com">Maximo Gallimó</a>.
                 </p>
             </div>
         </div>
